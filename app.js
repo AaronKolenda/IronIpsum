@@ -175,14 +175,28 @@ var textArray = [
 "solution",
 "user interface",
 "go get lunch",
+"Kyle's birthday",
+"Jiu-Jitsu",
+"bachelor party in Vegas",
+"Robin",
+"string",
+"functional programming",
+"Strongbad",
+"the system is down",
+"zen garden",
+"preprocessor", 
+"color clock",
+"hexadecimal",
+"Jibe",
+"recruiter"
 ]
 
 $(document).ready(function() {
 
 var getRandomWord = function() {
-	
-	var index = Math.floor(Math.random() * (175 - 0 + 1)) + 0;
-	return textArray[index];
+
+	var index = _.sample(textArray);
+	return index;
 }
 
 
@@ -213,14 +227,12 @@ var contructSentence = function(wordNum){
 	sentence = capitaliseFirstLetter(sentence);
 
 	return sentence;
-	console.log(sentence);
 }
 
 var contructParagraph = function() {
 	var paragraph = (contructSentence(9) + contructSentence(5) + contructSentence(7)
 	 + contructSentence(6) + contructSentence(8) + contructSentence(4) + contructSentence(6));
 	return paragraph;
-	
 	}
 
 	$("#button").click(function(evt){

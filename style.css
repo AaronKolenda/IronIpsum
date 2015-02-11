@@ -30,7 +30,6 @@ h3 {
 
 button {
 	display: block;
-	text-shadow: 1px 1px #E6E6FA;
 	font-size: 15px;
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -39,9 +38,9 @@ button {
 	border-radius: 10px;
 }
 
-
 .output {
 margin: 0px auto;
 text-align: center;
 width: 60%;
+line-height: 25px;
 }
