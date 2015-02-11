@@ -74,7 +74,7 @@ var textArray = [
 "industry veterans",
 "tech industry",
 "talent",
-"paul",
+"Paul",
 "training",
 "company",
 "TuneYard",
@@ -104,9 +104,9 @@ var textArray = [
 "demo day",
 "The College of Wooster",
 "The Ohio State University",
-"Duke basketball",
-"Cleveland",
-"Columbus",
+"basketball",
+"from Cleveland",
+"from Columbus",
 "Atlanta",
 "it's monday",
 "Chipotle",
@@ -117,8 +117,8 @@ var textArray = [
 "Crystal Tech Shop",
 "Crystal Underground",
 "Crystal City Shops",
-"highpoint",
-"lowpoint",
+"high point",
+"low point",
 "stress",
 "homework",
 "coding",
@@ -159,13 +159,29 @@ var textArray = [
 "passion",
 "beeramid",
 "inaugural cohort",
+"user experience",
+"design",
+"best practices",
+"hangman",
+"DRY",
+"file",
+"directory",
+"Starbucks",
+"open source",
+"Peace Corps",
+"elevate popcorn",
+"fruit snacks",
+"problem",
+"solution",
+"user interface",
+"go get lunch",
 ]
 
-console.log(textArray);
+$(document).ready(function() {
 
 var getRandomWord = function() {
 	
-	var index = Math.floor(Math.random() * (159 - 0 + 1)) + 0;
+	var index = Math.floor(Math.random() * (175 - 0 + 1)) + 0;
 	return textArray[index];
 }
 
@@ -202,11 +218,23 @@ var contructSentence = function(wordNum){
 
 var contructParagraph = function() {
 	var paragraph = (contructSentence(9) + contructSentence(5) + contructSentence(7)
-	 + contructSentence(6) + contructSentence(8) + contructSentence(4));
+	 + contructSentence(6) + contructSentence(8) + contructSentence(4) + contructSentence(6));
 	return paragraph;
 	
 	}
 
+	$("#button").click(function(evt){
+		var para1 = contructParagraph();
+		var para2 = contructParagraph();
+		var para3 = contructParagraph();
+		var para4 = contructParagraph();
+		var para5 = contructParagraph();
 
-	console.log(contructParagraph());
+	$(".output").html("<p>" + para1 + "</p>" + "<p>" + para2 + "</p>" + "<p>" + para3 + "</p>" + 
+		"<p>" + para4 + "</p>" + "<p>" + para5 + "</p>");
+
+	})
+
+});
+
 

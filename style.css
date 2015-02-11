@@ -1,0 +1,47 @@
+.container { 
+	margin-left: auto; 			/* A container element centers the page */ 
+    margin-right: auto;
+	margin-top: 100px;
+    width:80%;
+    min-width:500px;
+    border:1px solid black;
+	text-align: center;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: white;
+	font-family: 'Oxygen', sans-serif;
+}
+
+body {
+	background-color: #202020;
+}
+
+h1 {
+	font-size: 25px;
+	text-align: center;
+	text-shadow: 3px 3px #E6E6FA;
+}
+
+h3 {
+	text-align: center;
+}
+
+
+
+button {
+	display: block;
+	text-shadow: 1px 1px #E6E6FA;
+	font-size: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+}
+
+
+.output {
+margin: 0px auto;
+text-align: center;
+width: 60%;
+}
