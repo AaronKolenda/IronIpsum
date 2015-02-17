@@ -44,7 +44,7 @@ var textArray = [
 "array",
 "object",
 "object oriented",
-"SQL",
+"SQLite",
 "database",
 "link",
 "Wonman",
@@ -77,8 +77,6 @@ var textArray = [
 "Paul",
 "training",
 "company",
-"TuneYard",
-"Sonic Pi",
 "tool",
 "library",
 "framework",
@@ -105,9 +103,6 @@ var textArray = [
 "The College of Wooster",
 "The Ohio State University",
 "basketball",
-"from Cleveland",
-"from Columbus",
-"Atlanta",
 "it's monday",
 "Chipotle",
 "Bar Louie",
@@ -148,10 +143,9 @@ var textArray = [
 "Underscore",
 "vanilla javascript",
 "architecture",
-"brutalist",
 "metro",
 "ROT-13",
-"Fizzbuzz",
+"fizzbuzz",
 "greg-mode",
 "test driven development",
 "TDD",
@@ -188,7 +182,34 @@ var textArray = [
 "color clock",
 "hexadecimal",
 "Jibe",
-"recruiter"
+"recruiter",
+"blog",
+"teamwork",
+"personal brand",
+"error",
+"many-to-many",
+"one-to-many",
+"one-to-one",
+"div",
+"h1",
+"header",
+"footer",
+"syntax error",
+"vertically align",
+"repository",
+"pizza",
+"node",
+"npm",
+"jenga",
+"configuration",
+"ajax",
+"client",
+"server",
+"API",
+"request",
+"sour patch kids",
+"snow",
+"lecture"
 ]
 
 $(document).ready(function() {
@@ -208,6 +229,7 @@ var capitaliseFirstLetter = function(string) {
 
 
 var contructSentence = function(wordNum){
+
 	var sentence = [];
 
 	var counter = 1;
@@ -230,22 +252,35 @@ var contructSentence = function(wordNum){
 }
 
 var contructParagraph = function() {
-	var paragraph = (contructSentence(9) + contructSentence(5) + contructSentence(7)
-	 + contructSentence(6) + contructSentence(8) + contructSentence(4) + contructSentence(6));
+
+	var paragraph = [];
+
+	for(i=0; i<getRandomAmount(); i++) {
+			paragraph[i] = contructSentence(getRandomAmount());
+		}
+
+	var paragraph = paragraph.join("");
+
 	return paragraph;
-	}
+}
 
-	$("#button").click(function(evt){
-		var para1 = contructParagraph();
-		var para2 = contructParagraph();
-		var para3 = contructParagraph();
-		var para4 = contructParagraph();
-		var para5 = contructParagraph();
+$("#button").click(function(evt){
 
-	$(".output").html("<p>" + para1 + "</p>" + "<p>" + para2 + "</p>" + "<p>" + para3 + "</p>" + 
-		"<p>" + para4 + "</p>" + "<p>" + para5 + "</p>");
+	$("#output").empty();
 
-	})
+	var numParagraphs = $("#paragraphs").val();
+
+	for(var i=0; i < numParagraphs; i++) {
+		$("#output").append("<p>" + contructParagraph() + "</p>");
+	};
+
+});
+
+var getRandomAmount = function() {
+
+	var numWS = _.sample([4, 5, 6, 7, 8, 9]);
+	return numWS;
+}
 
 });
 
